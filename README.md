@@ -4,12 +4,30 @@
 
 | Column             | Type     | Options     |
 | ----------------   | -------- | ----------- |
-| name               | string   | null: false |
-| name_kana          | string   | null: false |
+| last_name          | string   | null: false |
+| first_name         | string   | null: false |
+| last_name_kana     | string   | null: false |
+| first_name_kana    | string   | null: false |
 | email              | string   | null: false |
 | encrypted_password | string   | null: false |
 | members_id         | integer  | null: false |
 | members_number     | integer  |             |
+
+### Association
+- has_many :items
+- has_many :orders
+
+## staffs テーブル
+
+| Column             | Type     | Options     |
+| ----------------   | -------- | ----------- |
+| last_name          | string   | null: false |
+| first_name         | string   | null: false |
+| last_name_kana     | string   | null: false |
+| first_name_kana    | string   | null: false |
+| email              | string   | null: false |
+| encrypted_password | string   | null: false |
+| staff_number       | integer  | null: false |
 
 ### Association
 - has_many :items
