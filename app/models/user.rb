@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-        
+  has_many :items
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :member
 
@@ -13,6 +13,6 @@ class User < ApplicationRecord
   validates :first_name,  presence: true
   validates :last_name_kana,  presence: true
   validates :first_name_kana,  presence: true
-  validates :member_id,  numericality: { other_than: 0, message: 'Select'  }
-  validates :members_number,  numericality: { with: /\A[0-9]+\z/, message: 'Half-width number' }
+  validates :members_id,  numericality: { other_than: 0, message: 'Select'  }
+  #validates :members_number, format: { with: /\A[0-9]+\z/, message: 'Half-width number' }
 end

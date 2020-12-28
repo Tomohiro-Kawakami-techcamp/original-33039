@@ -1,0 +1,20 @@
+<header class='top-page-header'>
+<div class='nav'>
+<ul class='lists-left'>
+  <%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+</ul>
+<% if user_signed_in? %>
+  <div class="greeting">
+    こんにちは、
+  <%= link_to current_user.last_name + current_user.first_name, "#", class: :greeting__link%>
+    さん
+  </div>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"  %>
+<% else %>
+ <ul class='lists-right'>
+  <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+</ul>
+<% end %>
+</div>
+</header>
