@@ -17,22 +17,6 @@
 - has_many :items
 - has_many :orders
 
-## staffs テーブル
-
-| Column             | Type     | Options     |
-| ----------------   | -------- | ----------- |
-| last_name          | string   | null: false |
-| first_name         | string   | null: false |
-| last_name_kana     | string   | null: false |
-| first_name_kana    | string   | null: false |
-| email              | string   | null: false |
-| encrypted_password | string   | null: false |
-| staff_number       | integer  | null: false |
-
-### Association
-- has_many :items
-- has_many :orders
-
 ## orders テーブル
 
 | Column              | Type       | Options                        |
