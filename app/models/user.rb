@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :items
+  has_many :posts
+  enum admin: {normal: 0, staff:1}
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :member
 

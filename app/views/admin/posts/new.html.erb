@@ -1,8 +1,8 @@
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @staff, url: admin_posts_path, class: 'registration-main', method: :get, local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
-      会員情報入力
+      スタッフ情報
     </h1>
   </div>
 
@@ -11,20 +11,11 @@
 
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">お名前(全角)</label>
+      <label class="form-text">名前(全角)</label>
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
       <%= f.text_area :last_name, class:"input-name", id:"last-name", placeholder:"例) 山田" %><%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 陸太郎" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">お名前カナ(全角)</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :last_name_kana, class:"input-name", id:"last-name-kana", placeholder:"例) ヤマダ" %><%= f.text_area :first_name_kana, class:"input-name", id:"first-name-kana", placeholder:"例) リクタロウ" %>
     </div>
   </div>
   <div class="form-group">
@@ -50,24 +41,16 @@
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
   <div class="form-group">
-    <div class='form-info-header'>
-      会員の種類
-    </div>
-    <p class='form-info-text'>
-      <%= f.collection_select(:members_id, Member.all, :id, :name, {}, {class:"select-box", id:"member"}) %>
-    </p>
-  </div>
-  <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">会員番号</label>
+      <label class="form-text">役職</label>
       <p>
-      <%= f.text_area :members_number, class:"input-number", id:"member-number", placeholder:"会員番号を入力して下さい" %>
+      <%= f.text_area :position, class:"input-number", id:"position", placeholder:"例：一般社員" %>
       </p>
     </div>
   </div>
   <p></p>
   <div class='register-btn'>
-    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= f.submit "登録" ,class:"register-red-btn" %>
   </div>
 </div>
 <% end %>
